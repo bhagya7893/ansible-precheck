@@ -1,0 +1,36 @@
+---
+
+# Does not include following packages :
+# init-functions
+# service
+# useradd
+# apache2
+# libfuse2
+# python-xml
+
+package:
+    - bind-utils
+    - chkconfig
+    - cyrus-sasl-gssapi
+    - cyrus-sasl-plain
+    - fuse
+    - fuse-libs
+    - gcc
+    - httpd
+    - libxslt
+    - mod_ssl
+    - MySQL-python
+    - openssl
+    - openssl-devel
+    - perl
+    - portmap
+    - postgresql-server >= 8.4
+    - psmisc
+    - python >= 2.4.3-43
+    - python-devel >= 2.4.3-43
+    - python-psycopg2
+    - python-setuptools
+    - sed
+    - sqlite
+    - swig
+    - zlib

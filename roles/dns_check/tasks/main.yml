@@ -1,0 +1,13 @@
+---
+
+- name: DNS lookup for host by DNS server 1
+  debug: msg="Querying <DNS_SERVER1> for IPv4 address for <hostname> produces {{ lookup('dig', '<hostname>', '@<DNS_SERVER1') }}"
+
+- name: DNS lookup for host by DNS server 2  
+  debug: msg="Querying <DNS_SERVER2> for IPv4 address for <hostname> produces {{ lookup('dig', '<hostname>', '@<DNS_SERVER2>') }}"
+
+- name: Reverse DNS lookup for host
+  debug: msg="Reverse DNS for <host_IP> is {{ lookup('dig', '<host_IP>/PTR', '@<DNS_SERVER1>') }}"
+
+- name: Reverse DNS lookup for host
+  debug: msg="Reverse DNS for <host_IP> is {{ lookup('dig', '1<host_IP>/PTR', '@<DNS_SERVER2>') }}"

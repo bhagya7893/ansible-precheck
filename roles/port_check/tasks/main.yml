@@ -1,0 +1,13 @@
+---
+
+- name: Install net-tools to run the port check
+  yum:
+    name: net-tools
+
+- name: Check if the network ports are free
+  command: netstat -tupln | egrep -i "8888|7180|7183|7187"
+  register: result
+
+- debug:
+    msg: "Ports are free"
+  when: result.stdout == ""

@@ -1,0 +1,71 @@
+---
+
+- name: RPM Packages
+  hosts: all
+  roles:
+    - rpm-packages_check
+
+- name: Set Swappiness
+  hosts: all
+  roles:
+    - swappiness
+
+- name: Check OS 
+  hosts: all
+  roles:
+    - os_check
+
+- name: Host Firewalls
+  hosts: all
+  roles: 
+    - firewall_check
+
+- name: NTP
+  hosts: all
+  roles:
+    - ntp_check
+
+- name: Kernel Security Modules
+  hosts: all
+  roles:
+    - security_check
+
+- name: Secure Shell
+  hosts: all
+  roles: 
+    - ssh_check
+
+- name: Additional Services
+  hosts: all
+  roles:
+    - additional-service_check
+
+- name: Transparent Huge Pages
+  hosts: all
+  roles:
+    - thp
+
+- name: Check if DNS is enabled and running
+  hosts: all
+  roles:
+    - dns_check
+
+- name: IPv6
+  hosts: all
+  roles:
+    - ipv6
+
+- name: Static IP 
+  hosts: all
+  roles:
+    - static-ip_check
+
+- name: Rngd Services
+  hosts: all
+  roles: 
+    - rngd_check
+
+- name: Network Port check 
+  hosts: all
+  roles:
+    - port_check

@@ -1,0 +1,7 @@
+---
+
+- name: ensure rng-tools is installed
+  yum: name=rng-tools state=latest update_cache=yes
+
+- name: ensure rngd is running
+  service: name=rngd state=started enabled=yes

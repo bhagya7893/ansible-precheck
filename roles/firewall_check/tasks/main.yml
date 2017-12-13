@@ -1,0 +1,9 @@
+---
+
+- name: Disable firewalld
+  service: name=firewalld enabled=no
+  register: firewall_status
+
+- name: be sure firewalld is stopped
+  service: name=firewalld state=stopped
+  ignore_errors: yes

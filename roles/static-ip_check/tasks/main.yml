@@ -1,0 +1,9 @@
+---
+
+#See how the IP addresses are assigned 
+
+- name: Check for Static IP
+  command: cat /etc/sysconfig/network-scripts/ifcfg-eth0
+  register: result
+
+- debug: msg="{{ result.stdout_lines}}"

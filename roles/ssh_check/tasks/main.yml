@@ -1,0 +1,9 @@
+---
+
+#Check if the ssh service is available and running 
+
+- name: Service enabled and running
+  service:
+    name: sshd
+    enabled: true
+    state: started

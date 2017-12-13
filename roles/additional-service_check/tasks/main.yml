@@ -1,0 +1,16 @@
+---
+
+#Check if services are present
+
+# WARNING: Will fail if either of the services are not found
+
+- name: Disable services
+  service:
+    name: "{{ item }}"
+    enabled: no
+    state: stopped
+  with_items:
+    - cups
+    - bluetooth
+    - postfix
+    - ip6tables

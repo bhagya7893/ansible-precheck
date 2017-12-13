@@ -1,0 +1,9 @@
+---
+
+#Setting Swappiness to 1 
+
+- name: Set VM Swappiness
+  sysctl:
+    name: vm.swappiness
+    value: 1
+    state: present

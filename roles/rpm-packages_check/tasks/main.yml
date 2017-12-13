@@ -1,0 +1,19 @@
+---
+
+- include_vars: ../../../groupvars/package.yml
+
+- name: check if packages are installed
+  yum:
+    list: "{{ package }}"
+  register: is_installed
+#  yum: 
+#    name: "{{ package }}"
+#    state: latest
+#  when:  (is_installed.results|length == 1) or (is_installed.results[1].yumstate != 'installed')
+
+
+- name: install packages if they do not exist
+  yum:
+    name: "{{ package }}"
+    state: latest
+  when: (is_installed.results|length == 1) or (is_installed.results[1].yumstate != 'installed')
