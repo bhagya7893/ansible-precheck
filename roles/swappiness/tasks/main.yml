@@ -2,8 +2,13 @@
 
 #Setting Swappiness to 1 
 
-- name: Set VM Swappiness
+- name: Get swappiness value
+  command: cat /proc/sys/vm/swappiness
+  register: actual_swappiness
+
+- name: Set VM Swappiness to 1
   sysctl:
     name: vm.swappiness
     value: 1
     state: present
+  when:  actual_swappiness.stdout != 1
