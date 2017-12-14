@@ -1,9 +1,0 @@
----
-
-#Setting THP to  Never
-
-- name: Disable Transparent Huge Pages
-  lineinfile:
-    path: /etc/default/grub
-    regexp: '^GRUB_CMDLINE_LINUX'
-    line: 'GRUB_CMDLINE_LINUX="console=tty1 console=ttyS0 earlyprintk=ttyS0 rootdelay=300 transparent_hugepage=never"'

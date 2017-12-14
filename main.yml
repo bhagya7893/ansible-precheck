@@ -1,9 +1,9 @@
 ---
 
-- name: RPM Packages
+- name: CM packages
   hosts: all
   roles:
-    - rpm-packages_check
+    - cm_repo
 
 - name: Set Swappiness
   hosts: all
@@ -45,10 +45,10 @@
   roles:
     - thp
 
-- name: Check if DNS is enabled and running
-  hosts: all
-  roles:
-    - dns_check
+#- name: Check if DNS is enabled and running
+#  hosts: all
+#  roles:
+#    - dns_check
 
 - name: IPv6
   hosts: all
@@ -69,3 +69,8 @@
   hosts: all
   roles:
     - port_check
+
+- name: Install Java
+  hosts: all
+  roles:
+    - java_check 
