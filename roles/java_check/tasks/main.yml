@@ -47,3 +47,12 @@
 
     - UnlimitedJCEPolicyJDK7.zip
   ignore_errors: True
+
+- name: Set Java Home
+  lineinfile: 
+    path: /etc/profile
+    insertafter: EOF 
+    line: "{{ item }}"
+  with_items:
+    - JAVA_HOME=/usr/java/jdk1.8.0_121-cloudera
+    - export JAVA_HOME
