@@ -1,9 +1,14 @@
 ---
 
-- name: CM packages
+- name: Setup CM Yum package
   hosts: all
   roles:
     - cm_repo
+
+- name: RPM package download
+  hosts: all
+  roles:
+    - rpm-packages_check
 
 - name: Set Swappiness
   hosts: all

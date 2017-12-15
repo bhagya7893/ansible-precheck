@@ -2,15 +2,14 @@
 
 #Check if services are present
 
-# WARNING: Will fail if either of the services are not found
+- include_vars: ../../../groupvars/package.yml
 
-- name: Disable services
-  service:
-    name: "{{ item }}"
-    enabled: no
-    state: stopped
-  with_items:
-    - cups
-    - bluetooth
-    - postfix
-    - ip6tables
+- name: Check if services are present
+  stat: path=/etc/init.d/"{{service_name}}"
+  register: service_status
+
+
+- name: Stop service
+  service: name="{{service_name}}" state=stopped
+  when: service_status.stat.exists
+  register: service_stopped

@@ -1,0 +1,8 @@
+---
+
+- name: Setting MTU
+   nmcli: 
+   conn_name: "{{ ansible_default_ipv4.interface }}"
+   mtu: 9000
+   type: ethernet
+   state: present
