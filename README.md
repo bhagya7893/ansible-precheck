@@ -8,4 +8,5 @@ Prerequisites to be perfomed on Ansible Control Machine
 2. Create host inventory in : /etc/ansible/hosts
 
 Running Playbook:
-ansible-playbook ansible-precheck/main.yml
+ansible-playbook ansible-precheck/precheck.yml
+ansible-playbook ansible-prehceck/start-install.yml
