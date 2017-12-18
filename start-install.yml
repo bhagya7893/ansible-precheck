@@ -1,0 +1,14 @@
+---
+
+- name: Install Cloudera Manager Agents
+  hosts: cdh_servers
+  roles:
+    - cm_agents
+  tags: cm_agents
+
+
+- name: Install Cloudera Manager Server
+  hosts: scm_server
+  roles:
+    - scm
+
