@@ -2,7 +2,7 @@
 
 #Check if services are present
 
-- include_vars: ../../../groupvars/package.yml
+- include_vars: ../../../group_vars/package.yml
 
 - name: Check if services are present
   stat: path=/etc/init.d/"{{service_name}}"
