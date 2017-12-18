@@ -1,5 +1,11 @@
 ---
 
+service_name:
+    - cups
+    - bluetooth
+    - postfix
+    - ip6tables
+
 # Does not include following packages :
 # init-functions
 # service
