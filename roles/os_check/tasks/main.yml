@@ -4,6 +4,8 @@
   command: cat /etc/redhat-release
   register: os_version
 
+- debug: msg="{{ os_version.stdout }}"
+
 - debug: msg="{{ os_version.stderr }}"
 
 - debug:
