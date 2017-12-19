@@ -8,4 +8,4 @@
 
 - debug:
     msg: "Correct OS version"
-  when: ansible_distribution_version | version_compare( '6.8', '>=')
+  when: (ansible_distribution | lower == "centos") and (ansible_distribution_version | version_compare( '6.8', '>=')) 
