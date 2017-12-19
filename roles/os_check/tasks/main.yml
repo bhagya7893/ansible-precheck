@@ -4,6 +4,8 @@
   command: cat /etc/redhat-release
   register: os_version
 
-- debug: msg="{{ os_version.stdout}}"
-
 - debug: msg="{{ os_version.stderr }}"
+
+- debug:
+    msg: "Correct OS version"
+  when: ansible_distribution_version | version_compare( '6.8', '>=')
