@@ -1,0 +1,7 @@
+---
+
+- name: Check if filesystem exists on NameNode
+  hosts: 
+  roles:
+    - file_check
+    

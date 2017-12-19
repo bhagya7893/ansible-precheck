@@ -1,0 +1,12 @@
+---
+
+- include_vars: ../../../groupvars/all
+
+- name: Check if Directory Exists
+  stat:
+    path: "{{ name_node_files }}"
+  register: file_status
+
+- debug:
+    msg: "Path exists and is a directory"
+  when: file_status.stat.isdir is defined and file_status.stat.isdir

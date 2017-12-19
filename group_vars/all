@@ -1,3 +1,7 @@
 ---
 
 tmp_dir: /tmp
+
+name_node_files :
+   - /var/log/cdh
+   - /opt/cloudera
