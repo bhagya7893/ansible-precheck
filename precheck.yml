@@ -4,78 +4,94 @@
   hosts: all
   roles:
     - cm_repo
+  tags: cm_repo
 
 - name: RPM package download
   hosts: all
   roles:
     - rpm-packages_check
+  tags: rpm-packages_check
 
 - name: Set Swappiness
   hosts: all
   roles:
     - swappiness
+  tags: swappiness
 
 - name: Check OS 
   hosts: all
   roles:
     - os_check
+  tags: os_check
 
 - name: Host Firewalls
   hosts: all
   roles: 
     - firewall_check
+  tags: firewall_check
 
 - name: NTP
   hosts: all
   roles:
     - ntp_check
+  tags: ntp_check
 
 - name: Kernel Security Modules
   hosts: all
   roles:
     - security_check
+  tags: security_check
 
 - name: Secure Shell
   hosts: all
   roles: 
     - ssh_check
-
+  tags: ssh_check
+  
 - name: Additional Services
   hosts: all
   roles:
     - additional-service_check
+  tags: additional-service_check
 
 - name: Transparent Huge Pages
   hosts: all
   roles:
     - thp
+  tags: thp
 
 #- name: Check if DNS is enabled and running
 #  hosts: all
 #  roles:
 #    - dns_check
+#  tags: dns_check
 
 - name: IPv6
   hosts: all
   roles:
     - ipv6
+  tags: ipv6
 
 - name: Static IP 
   hosts: all
   roles:
     - static-ip_check
+  tags: static-ip_check
 
 - name: Rngd Services
   hosts: all
   roles: 
     - rngd_check
+  tags: rngd_check
 
 - name: Network Port check 
   hosts: all
   roles:
     - port_check
+  tags: port_check
 
 - name: Install Java
   hosts: all
   roles:
     - java_check 
+  tags: java_check
