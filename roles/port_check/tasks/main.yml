@@ -9,5 +9,5 @@
   register: result
 
 - debug:
-    msg: "Ports are free"
-  when: result.stdout == ""
+    msg: "Ports are not free"
+  when: result.stdout != ""
