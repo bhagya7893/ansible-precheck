@@ -6,3 +6,5 @@
    mtu: 9000
    type: ethernet
    state: present
+   
+- debug: msg="{{ ansible_default_ipv4.mtu }}"
