@@ -3,7 +3,7 @@
 #See how the IP addresses are assigned 
 
 - name: Check for Static IP
-  command: cat /etc/sysconfig/network-scripts/ifcfg-{{ ansible_default_ipv4 }}
+  command: cat /etc/sysconfig/network-scripts/ifcfg-{{ ansible_default_ipv4.interface }}
   register: result
 
 - debug: msg="{{ result.stdout_lines}}"
