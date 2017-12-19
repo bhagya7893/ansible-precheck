@@ -1,6 +1,6 @@
 ---
 
-- include_vars: ../../../groupvars/package.yml
+- include_vars: ../../../group_vars/package.yml
 
 - name: check if packages are installed
   yum:
