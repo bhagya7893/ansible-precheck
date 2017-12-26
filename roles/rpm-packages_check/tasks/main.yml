@@ -17,3 +17,4 @@
     name: "{{ package }}"
     state: latest
   when: (is_installed.results|length == 1) or (is_installed.results[1].yumstate != 'installed')
+  ignore_errors: True
